@@ -1,2 +1,2 @@
 # etl-final-project
-An example of extract, transform and load using Pentaho
+An example of extracting, transforming and loading procedures using Pentaho

@@ -375,7 +375,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
+      <xloc>480</xloc>
       <yloc>192</yloc>
     </entry>
     <entry>
@@ -411,7 +411,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>560</xloc>
+      <xloc>624</xloc>
       <yloc>192</yloc>
     </entry>
     <entry>
@@ -447,7 +447,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
+      <xloc>784</xloc>
       <yloc>192</yloc>
     </entry>
     <entry>
@@ -483,8 +483,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>864</xloc>
-      <yloc>256</yloc>
+      <xloc>960</xloc>
+      <yloc>288</yloc>
     </entry>
     <entry>
       <name>Create character oltp</name>
@@ -555,7 +555,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>752</xloc>
+      <xloc>960</xloc>
       <yloc>192</yloc>
     </entry>
   </entries>
@@ -608,6 +608,15 @@
     <hop>
       <from>Create enrollments sum oltp</from>
       <to>Create oltp school other info</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Create oltp school other info</from>
+      <to>Create enrollments fact</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

@@ -657,12 +657,12 @@
       </field>
       <field>
         <name>SEDE_TELEFONO</name>
-        <type>Number</type>
+        <type>String</type>
         <format>#.#</format>
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>15</length>
+        <length>30</length>
         <precision>0</precision>
         <trim_type>both</trim_type>
       </field>

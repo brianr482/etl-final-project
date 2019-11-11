@@ -527,16 +527,40 @@
     <return_field />
     <fields>
       <field>
-        <column_name>SEDE_CODIGO</column_name>
-        <stream_name>SEDE_CODIGO</stream_name>
+        <column_name>SCHOOL_KEY</column_name>
+        <stream_name>SCHOOL_KEY</stream_name>
       </field>
       <field>
         <column_name>ENROLLED_STUDENTS</column_name>
         <stream_name>ENROLLED_STUDENTS</stream_name>
       </field>
       <field>
-        <column_name>COD_KEY</column_name>
-        <stream_name>COD_KEY</stream_name>
+        <column_name>DEPARTMENT_KEY</column_name>
+        <stream_name>DEPARTMENT_KEY</stream_name>
+      </field>
+      <field>
+        <column_name>CITY_KEY</column_name>
+        <stream_name>CITY_KEY</stream_name>
+      </field>
+      <field>
+        <column_name>CHARACTER_KEY</column_name>
+        <stream_name>CHARACTER_KEY</stream_name>
+      </field>
+      <field>
+        <column_name>PERIOD_KEY</column_name>
+        <stream_name>PERIOD_KEY</stream_name>
+      </field>
+      <field>
+        <column_name>AREA_ID</column_name>
+        <stream_name>AREA_ID</stream_name>
+      </field>
+      <field>
+        <column_name>SCHOOL_DAY_KEY</column_name>
+        <stream_name>SCHOOL_DAY_KEY</stream_name>
+      </field>
+      <field>
+        <column_name>EDUCATION_LEVEL_KEY</column_name>
+        <stream_name>EDUCATION_LEVEL_KEY</stream_name>
       </field>
     </fields>
     <cluster_schema />
@@ -565,8 +589,8 @@
     </partitioning>
     <connection>db</connection>
     <sql>SELECT 
-	dsch.SCHOOL_KEY,
-	ers.ENROLLED_STUDENTS,
+	dsch.COD_KEY AS SCHOOL_KEY,
+	oers.ENROLLED_STUDENTS,
 	ddep.COD_KEY AS DEPARTMENT_KEY,
 	c.COD_KEY AS CITY_KEY,
 	dchar.COD_KEY AS CHARACTER_KEY,
@@ -575,8 +599,8 @@
 	dsday.COD_KEY AS SCHOOL_DAY_KEY,
 	delevel.COD_KEY AS EDUCATION_LEVEL_KEY
 FROM world.oltp_schools sch 
-LEFT JOIN world.enrollments_sum ers
-	ON sch.SEDE_CODIGO = ers.SEDE_CODIGO
+LEFT JOIN world.oltp_enrollments_sum oers
+	ON oers.SEDE_CODIGO = sch.SEDE_CODIGO
 LEFT JOIN world.dim_department ddep
 	ON ddep.CODIGOINTERNODEPTO = sch.CODIGOINTERNODEPTO
 LEFT JOIN world.dim_city c
@@ -586,18 +610,19 @@ LEFT JOIN world.dim_school dsch
 LEFT JOIN world.oltp_character ochar
 	ON ochar.SEDE_CODIGO = sch.SEDE_CODIGO
 LEFT JOIN world.dim_character dchar
-	ON dchar.CARACTER_CODIGO = ochar.CARACTER_CODIGO;
+	ON dchar.CARACTER_CODIGO = ochar.CARACTER_CODIGO
 LEFT JOIN world.dim_period dpe
-	ON dpe.PERIODO_ID = sch.PERIODO_ID;
+	ON dpe.PERIODO_ID = sch.PERIODO_ID
 LEFT JOIN world.dim_area dar
-	ON dar.AREA_ID = sch.AREA_ID;
+	ON dar.AREA_ID = sch.AREA_ID
 LEFT JOIN world.oltp_school_other_info osoinfo
-	ON osoinfo.SEDE_CODIGO = sch.SEDE_CODIGO;
+	ON osoinfo.SEDE_CODIGO = sch.SEDE_CODIGO
 LEFT JOIN world.dim_school_day dsday
-	ON dsday.JORNADA_ID = osoinfo.JORNADA_ID;
+	ON dsday.JORNADA_ID = osoinfo.JORNADA_ID
 LEFT JOIN world.dim_education_level delevel
-	ON delevel.NIVELENSE_ID = osoinfo.NIVELENSE_ID;</sql>
-    <limit>0</limit>
+	ON delevel.NIVELENSE_ID = osoinfo.NIVELENSE_ID
+LIMIT 2;</sql>
+    <limit>2</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>

@@ -1902,11 +1902,6 @@
         <to>date_to</to>
       </date>
       <field>
-        <name>DEPTO</name>
-        <lookup>DEPTO</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
         <name>MUNI</name>
         <lookup>MUNI</lookup>
         <update>Insert</update>

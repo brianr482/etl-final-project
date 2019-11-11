@@ -551,8 +551,8 @@
         <stream_name>PERIOD_KEY</stream_name>
       </field>
       <field>
-        <column_name>AREA_ID</column_name>
-        <stream_name>AREA_ID</stream_name>
+        <column_name>AREA_KEY</column_name>
+        <stream_name>AREA_KEY</stream_name>
       </field>
       <field>
         <column_name>SCHOOL_DAY_KEY</column_name>
@@ -595,7 +595,7 @@
 	c.COD_KEY AS CITY_KEY,
 	dchar.COD_KEY AS CHARACTER_KEY,
 	dpe.COD_KEY AS PERIOD_KEY,
-	dar.COD_KEY AS AREA_ID,
+	dar.COD_KEY AS AREA_KEY,
 	dsday.COD_KEY AS SCHOOL_DAY_KEY,
 	delevel.COD_KEY AS EDUCATION_LEVEL_KEY
 FROM world.oltp_schools sch 
@@ -605,6 +605,8 @@ LEFT JOIN world.dim_department ddep
 	ON ddep.CODIGOINTERNODEPTO = sch.CODIGOINTERNODEPTO
 LEFT JOIN world.dim_city c
 	ON sch.CODIGOINTERNODEPTO = c.CODIGOINTERNODEPTO AND sch.CODIGOINTERNOMUNI = c.CODIGOINTERNOMUNI
+LEFT JOIN world.dim_area dar
+	ON dar.AREA_ID = sch.AREA_ID
 LEFT JOIN world.dim_school dsch
 	ON dsch.SEDE_CODIGO = sch.SEDE_CODIGO
 LEFT JOIN world.oltp_character ochar
@@ -613,8 +615,6 @@ LEFT JOIN world.dim_character dchar
 	ON dchar.CARACTER_CODIGO = ochar.CARACTER_CODIGO
 LEFT JOIN world.dim_period dpe
 	ON dpe.PERIODO_ID = sch.PERIODO_ID
-LEFT JOIN world.dim_area dar
-	ON dar.AREA_ID = sch.AREA_ID
 LEFT JOIN world.oltp_school_other_info osoinfo
 	ON osoinfo.SEDE_CODIGO = sch.SEDE_CODIGO
 LEFT JOIN world.dim_school_day dsday

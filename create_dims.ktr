@@ -549,7 +549,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>docs/Car tula £nica sede educativa.csv</filename>
+    <filename>/Users/brian/Documents/U/software design/final project/etl-final-project/docs/Car tula £nica sede educativa.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>
@@ -1413,7 +1413,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>docs/Caracter de la sede educativa.csv</filename>
+    <filename>/Users/brian/Documents/U/software design/final project/etl-final-project/docs/Caracter de la sede educativa.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>
@@ -1518,7 +1518,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>docs/Nivel educativo, jornada y calendario por sede educativa.csv</filename>
+    <filename>/Users/brian/Documents/U/software design/final project/etl-final-project/docs/Nivel educativo, jornada y calendario por sede educativa.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>

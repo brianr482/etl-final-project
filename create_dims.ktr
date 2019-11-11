@@ -444,7 +444,7 @@
     <database>world</database>
     <port>3306</port>
     <username>root</username>
-    <password>Encrypted 2be98afc826c88081a50db4218ec2fee5</password>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce218cc1fb8f</password>
     <servername />
     <data_tablespace />
     <index_tablespace />
@@ -549,7 +549,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>docs/Car tula £nica sede educativa.csv</filename>
+    <filename>/Users/brian/Documents/U/software design/final project/etl-final-project/docs/Car tula £nica sede educativa.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>
@@ -1413,7 +1413,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>docs/Caracter de la sede educativa.csv</filename>
+    <filename>/Users/brian/Documents/U/software design/final project/etl-final-project/docs/Caracter de la sede educativa.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>
@@ -1518,7 +1518,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>docs/Nivel educativo, jornada y calendario por sede educativa.csv</filename>
+    <filename>/Users/brian/Documents/U/software design/final project/etl-final-project/docs/Nivel educativo, jornada y calendario por sede educativa.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>

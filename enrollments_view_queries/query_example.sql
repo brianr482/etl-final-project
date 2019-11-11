@@ -1,0 +1,1 @@
+SELECT * FROM world.fact_enrollments;

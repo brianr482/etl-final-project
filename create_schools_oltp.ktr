@@ -1374,7 +1374,7 @@
       <schema_name />
     </partitioning>
     <connection>db</connection>
-    <schema />
+    <schema>world</schema>
     <table>oltp_schools</table>
     <commit>1000</commit>
     <truncate>Y</truncate>

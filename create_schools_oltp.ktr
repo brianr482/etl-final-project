@@ -431,7 +431,7 @@
     <created_date>2019/11/10 21:24:17.513</created_date>
     <modified_user>-</modified_user>
     <modified_date>2019/11/10 21:24:17.513</modified_date>
-    <key_for_session_key />
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -607,7 +607,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>8</length>
+        <length>44</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -618,7 +618,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>97</length>
+        <length>255</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -629,7 +629,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>70</length>
+        <length>116</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -640,7 +640,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>12</length>
+        <length>14</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -651,7 +651,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>57</length>
+        <length>128</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -684,7 +684,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>41</length>
+        <length>50</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -695,7 +695,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>33</length>
+        <length>83</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -728,7 +728,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>15</length>
+        <length>56</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -750,7 +750,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>12</length>
+        <length>27</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -778,14 +778,14 @@
       </field>
       <field>
         <name>LOCALIDAD</name>
-        <type>Number</type>
-        <format>#.#</format>
+        <type>String</type>
+        <format />
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>15</length>
-        <precision>0</precision>
-        <trim_type>both</trim_type>
+        <length>29</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
       </field>
       <field>
         <name>INSPECCION_ID</name>
@@ -816,7 +816,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>20</length>
+        <length>52</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -849,7 +849,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>21</length>
+        <length>43</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -926,7 +926,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>7</length>
+        <length>10</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -959,7 +959,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>7</length>
+        <length>41</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1020,14 +1020,14 @@
       </field>
       <field>
         <name>REGIMEN</name>
-        <type>Number</type>
-        <format>#.#</format>
+        <type>String</type>
+        <format />
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>15</length>
-        <precision>0</precision>
-        <trim_type>both</trim_type>
+        <length>18</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
       </field>
       <field>
         <name>SEDE_TOTAL_OFRE_ANTE_JORN</name>
@@ -1124,7 +1124,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>25</length>
+        <length>30</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1157,7 +1157,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>12</length>
+        <length>13</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1190,7 +1190,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>9</length>
+        <length>12</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1212,7 +1212,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>7</length>
+        <length>10</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1300,7 +1300,7 @@
         <currency>COP</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>46</length>
+        <length>69</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1392,7 +1392,7 @@
     <return_field />
     <fields>
       <field>
-        <column_name>﻿SEDE_CODIGO</column_name>
+        <column_name>SEDE_CODIGO</column_name>
         <stream_name>﻿SEDE_CODIGO</stream_name>
       </field>
       <field>

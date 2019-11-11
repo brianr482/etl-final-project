@@ -510,9 +510,9 @@
       <schema_name />
     </partitioning>
     <connection>db</connection>
-    <sql>SELECT A.﻿SEDE_CODIGO, SUM(SEDEALUM_CANTIDAD) AS ENROLLED_STUDENTS
+    <sql>SELECT A.SEDE_CODIGO, SUM(SEDEALUM_CANTIDAD) AS ENROLLED_STUDENTS
 FROM world.oltp_enrollments A
-GROUP BY A.﻿SEDE_CODIGO;</sql>
+GROUP BY A.SEDE_CODIGO;</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -561,8 +561,8 @@ GROUP BY A.﻿SEDE_CODIGO;</sql>
     <return_field />
     <fields>
       <field>
-        <column_name>﻿SEDE_CODIGO</column_name>
-        <stream_name>﻿SEDE_CODIGO</stream_name>
+        <column_name>SEDE_CODIGO</column_name>
+        <stream_name>SEDE_CODIGO</stream_name>
       </field>
       <field>
         <column_name>ENROLLED_STUDENTS</column_name>

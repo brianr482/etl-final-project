@@ -508,7 +508,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>/Users/sjdonado/Documents/study/software-design-2/etl-final-project/docs/Uso de los equipos de c¢mputo.csv</filename>
+    <filename>${Internal.Entry.Current.Directory}/docs/Uso de los equipos de cómputo.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>
@@ -520,7 +520,7 @@
     <add_filename_result>N</add_filename_result>
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
-    <encoding />
+    <encoding>UTF-8</encoding>
     <fields>
       <field>
         <name>﻿SEDE_CODIGO</name>
@@ -584,7 +584,7 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>73</length>
+        <length>100</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>

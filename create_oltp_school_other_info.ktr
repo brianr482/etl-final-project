@@ -508,7 +508,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>/Users/brian/Documents/U/software design/final project/etl-final-project/docs/Nivel educativo, jornada y calendario por sede educativa.csv</filename>
+    <filename>${Internal.Entry.Current.Directory}/docs/Nivel educativo, jornada y calendario por sede educativa.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>

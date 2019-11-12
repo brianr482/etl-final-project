@@ -526,6 +526,46 @@
     <return_keys>N</return_keys>
     <return_field />
     <fields>
+      <field>
+        <column_name>PC_USAGES_BY_SCCHOOL_AT_DEPARTMENT</column_name>
+        <stream_name>PC_USAGES_BY_SCCHOOL_AT_DEPARTMENT</stream_name>
+      </field>
+      <field>
+        <column_name>DEPARTMENT_KEY</column_name>
+        <stream_name>DEPARTMENT_KEY</stream_name>
+      </field>
+      <field>
+        <column_name>SCHOOL_KEY</column_name>
+        <stream_name>SCHOOL_KEY</stream_name>
+      </field>
+      <field>
+        <column_name>PC_USAGES_KEY</column_name>
+        <stream_name>PC_USAGES_KEY</stream_name>
+      </field>
+      <field>
+        <column_name>CITY_KEY</column_name>
+        <stream_name>CITY_KEY</stream_name>
+      </field>
+      <field>
+        <column_name>CHARACTER_KEY</column_name>
+        <stream_name>CHARACTER_KEY</stream_name>
+      </field>
+      <field>
+        <column_name>PERIOD_KEY</column_name>
+        <stream_name>PERIOD_KEY</stream_name>
+      </field>
+      <field>
+        <column_name>AREA_KEY</column_name>
+        <stream_name>AREA_KEY</stream_name>
+      </field>
+      <field>
+        <column_name>SCHOOL_DAY_KEY</column_name>
+        <stream_name>SCHOOL_DAY_KEY</stream_name>
+      </field>
+      <field>
+        <column_name>EDUCATION_LEVEL_KEY</column_name>
+        <stream_name>EDUCATION_LEVEL_KEY</stream_name>
+      </field>
     </fields>
     <cluster_schema />
     <remotesteps>
@@ -535,7 +575,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>528</xloc>
+      <xloc>480</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
@@ -553,22 +593,45 @@
     </partitioning>
     <connection>mysql</connection>
     <sql>SELECT
-	dpcu.COD_KEY AS PC_USAGES_KEY,
 	opcuc.PC_USAGES_BY_SCCHOOL_AT_DEPARTMENT,
 	ddep.COD_KEY AS DEPARTMENT_KEY,
 	dsch.COD_KEY AS SCHOOL_KEY,
+	dpcu.COD_KEY AS PC_USAGES_KEY,
+	c.COD_KEY AS CITY_KEY,
+	dchar.COD_KEY AS CHARACTER_KEY,
+	dpe.COD_KEY AS PERIOD_KEY,
+	dar.COD_KEY AS AREA_KEY,
+	dsday.COD_KEY AS SCHOOL_DAY_KEY,
+	delevel.COD_KEY AS EDUCATION_LEVEL_KEY
 FROM world.oltp_pc_usages pcu
 LEFT JOIN world.oltp_pc_usages_sum opcuc
 	ON opcuc.ENSEQ_CODIGO = pcu.ENSEQ_CODIGO
 LEFT JOIN world.dim_department ddep
 	ON ddep.CODIGOINTERNODEPTO = opcuc.CODIGOINTERNODEPTO
-LEFT JOIN world.dim_school dsch
-	ON dsch.SEDE_CODIGO = pcu.SEDE_CODIGO
 LEFT JOIN world.dim_pc_usages dpcu
 	ON dpcu.ENSEQ_CODIGO = pcu.ENSEQ_CODIGO
+LEFT JOIN world.dim_school dsch
+	ON dsch.SEDE_CODIGO = pcu.SEDE_CODIGO
 LEFT JOIN world.oltp_schools osch
 	ON osch.SEDE_CODIGO = pcu.SEDE_CODIGO
-LIMIT 2;</sql>
+LEFT JOIN world.dim_city c
+	ON osch.CODIGOINTERNODEPTO = c.CODIGOINTERNODEPTO AND osch.CODIGOINTERNOMUNI = c.CODIGOINTERNOMUNI
+LEFT JOIN world.dim_area dar
+	ON dar.AREA_ID = osch.AREA_ID
+LEFT JOIN world.oltp_character ochar
+	ON ochar.SEDE_CODIGO = pcu.SEDE_CODIGO
+LEFT JOIN world.dim_character dchar
+	ON dchar.CARACTER_CODIGO = ochar.CARACTER_CODIGO
+LEFT JOIN world.dim_period dpe
+	ON dpe.PERIODO_ID = pcu.PERIODO_ID
+LEFT JOIN world.oltp_school_other_info osoinfo
+	ON osoinfo.SEDE_CODIGO = pcu.SEDE_CODIGO
+LEFT JOIN world.dim_school_day dsday
+	ON dsday.JORNADA_ID = osoinfo.JORNADA_ID
+LEFT JOIN world.dim_education_level delevel
+	ON delevel.NIVELENSE_ID = osoinfo.NIVELENSE_ID
+LIMIT 2;
+</sql>
     <limit>2</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -582,7 +645,7 @@ LIMIT 2;</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>320</xloc>
+      <xloc>304</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>

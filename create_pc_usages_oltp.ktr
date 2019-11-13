@@ -508,7 +508,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>${Internal.Entry.Current.Directory}/docs/Uso de los equipos de c¢mputo.csv</filename>
+    <filename>${Internal.Entry.Current.Directory}/docs/Uso de los equipos de cómputo.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>

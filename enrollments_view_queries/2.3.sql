@@ -1,1 +1,1 @@
-select  distinct COLEGIO, SEDE_CODIGO, `TOTAL DE MATRICULADOS` from enrollments_view  where AREA='Rural';
+select * from enrollments_view  where AREA='Rural';

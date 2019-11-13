@@ -592,7 +592,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>720</xloc>
-      <yloc>256</yloc>
+      <yloc>336</yloc>
     </entry>
     <entry>
       <name>Create pc usages sum oltp</name>
@@ -628,7 +628,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>880</xloc>
-      <yloc>256</yloc>
+      <yloc>336</yloc>
     </entry>
     <entry>
       <name>Create pc usages fact</name>
@@ -664,7 +664,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1040</xloc>
-      <yloc>256</yloc>
+      <yloc>336</yloc>
     </entry>
   </entries>
   <hops>
@@ -732,15 +732,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Create oltp school other info</from>
-      <to>Create pc usages oltp</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Create enrollments sum oltp</from>
       <to>Create enrollments fact</to>
       <from_nr>0</from_nr>
@@ -752,6 +743,15 @@
     <hop>
       <from>Create pc usages sum oltp</from>
       <to>Create pc usages fact</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Create oltp school other info</from>
+      <to>Create pc usages oltp</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

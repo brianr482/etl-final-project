@@ -509,7 +509,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>${Internal.Entry.Current.Directory}/docs/Car tula £nica sede educativa.csv</filename>
+    <filename>${Internal.Entry.Current.Directory}/docs/Carátula única sede educativa.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>

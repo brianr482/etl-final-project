@@ -508,7 +508,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>${Internal.Entry.Current.Directory}/docs/Alumnos matriculados por jornadas y nivel educativo (educaci¢n tradicional, CLEI y modelos educativos).csv</filename>
+    <filename>${Internal.Entry.Current.Directory}/docs/Alumnos matriculados por jornadas y nivel educativo (educación tradicional, CLEI y modelos educativos).csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>

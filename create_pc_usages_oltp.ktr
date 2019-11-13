@@ -508,7 +508,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>/Users/sjdonado/Documents/study/software-design-2/etl-final-project/docs/Uso de los equipos de c¢mputo.csv</filename>
+    <filename>${Internal.Entry.Current.Directory}/docs/Uso de los equipos de c¢mputo.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>
@@ -523,14 +523,14 @@
     <encoding />
     <fields>
       <field>
-        <name>﻿SEDE_CODIGO</name>
-        <type>Integer</type>
-        <format>#</format>
+        <name>SEDE_CODIGO</name>
+        <type>String</type>
+        <format />
         <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>15</length>
-        <precision>0</precision>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>30</length>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -538,8 +538,8 @@
         <type>Integer</type>
         <format>#</format>
         <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>15</length>
         <precision>0</precision>
         <trim_type>none</trim_type>
@@ -549,8 +549,8 @@
         <type>Integer</type>
         <format>#</format>
         <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>15</length>
         <precision>0</precision>
         <trim_type>none</trim_type>
@@ -560,8 +560,8 @@
         <type>Integer</type>
         <format>#</format>
         <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>15</length>
         <precision>0</precision>
         <trim_type>none</trim_type>
@@ -571,8 +571,8 @@
         <type>Integer</type>
         <format>#</format>
         <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>15</length>
         <precision>0</precision>
         <trim_type>none</trim_type>
@@ -582,9 +582,9 @@
         <type>String</type>
         <format />
         <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>73</length>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>74</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -633,7 +633,7 @@
     <fields>
       <field>
         <column_name>SEDE_CODIGO</column_name>
-        <stream_name>﻿SEDE_CODIGO</stream_name>
+        <stream_name>SEDE_CODIGO</stream_name>
       </field>
       <field>
         <column_name>PERIODO_ID</column_name>
@@ -644,16 +644,16 @@
         <stream_name>PERIODO_ANIO</stream_name>
       </field>
       <field>
-        <column_name>ENSEQ_NOMBRE</column_name>
-        <stream_name>ENSEQ_NOMBRE</stream_name>
-      </field>
-      <field>
         <column_name>ENSEQ_ID</column_name>
         <stream_name>ENSEQ_ID</stream_name>
       </field>
       <field>
         <column_name>ENSEQ_CODIGO</column_name>
         <stream_name>ENSEQ_CODIGO</stream_name>
+      </field>
+      <field>
+        <column_name>ENSEQ_NOMBRE</column_name>
+        <stream_name>ENSEQ_NOMBRE</stream_name>
       </field>
     </fields>
     <cluster_schema />

@@ -9,7 +9,7 @@ CREATE VIEW `enrollments_view` AS
         dcharacter.CARACTER_NOMBRE AS 'CARACTER',
         delevel.NIVELENSE_NOMBRE AS 'NIVEL_DE_ENSEÑANZA',
         dsday.JORNADA_NOMBRE AS 'JORNADA',
-        fact.ENROLLED_STUDENTS AS 'TOTAL DE MATRICULADOS'
+        fact.ENROLLED_STUDENTS AS 'TOTAL DE MATRICULADOS / COLEGIO'
     FROM
         world.fact_enrollments fact
 			LEFT JOIN

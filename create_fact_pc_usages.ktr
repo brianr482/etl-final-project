@@ -593,46 +593,15 @@
     </partitioning>
     <connection>mysql</connection>
     <sql>SELECT
-	opcuc.PC_USAGES_BY_SCCHOOL_AT_DEPARTMENT,
-	ddep.COD_KEY AS DEPARTMENT_KEY,
-	dsch.COD_KEY AS SCHOOL_KEY,
-	dpcu.COD_KEY AS PC_USAGES_KEY,
-	c.COD_KEY AS CITY_KEY,
-	dchar.COD_KEY AS CHARACTER_KEY,
-	dpe.COD_KEY AS PERIOD_KEY,
-	dar.COD_KEY AS AREA_KEY,
-	dsday.COD_KEY AS SCHOOL_DAY_KEY,
-	delevel.COD_KEY AS EDUCATION_LEVEL_KEY
-FROM world.oltp_pc_usages pcu
-LEFT JOIN world.oltp_pc_usages_sum opcuc
-	ON opcuc.ENSEQ_CODIGO = pcu.ENSEQ_CODIGO
-LEFT JOIN world.dim_department ddep
-	ON ddep.CODIGOINTERNODEPTO = opcuc.CODIGOINTERNODEPTO
-LEFT JOIN world.dim_pc_usages dpcu
-	ON dpcu.ENSEQ_CODIGO = pcu.ENSEQ_CODIGO
-LEFT JOIN world.dim_school dsch
-	ON dsch.SEDE_CODIGO = pcu.SEDE_CODIGO
-LEFT JOIN world.oltp_schools osch
-	ON osch.SEDE_CODIGO = pcu.SEDE_CODIGO
-LEFT JOIN world.dim_city c
-	ON osch.CODIGOINTERNODEPTO = c.CODIGOINTERNODEPTO AND osch.CODIGOINTERNOMUNI = c.CODIGOINTERNOMUNI
-LEFT JOIN world.dim_area dar
-	ON dar.AREA_ID = osch.AREA_ID
-LEFT JOIN world.oltp_character ochar
-	ON ochar.SEDE_CODIGO = pcu.SEDE_CODIGO
-LEFT JOIN world.dim_character dchar
-	ON dchar.CARACTER_CODIGO = ochar.CARACTER_CODIGO
-LEFT JOIN world.dim_period dpe
-	ON dpe.PERIODO_ID = pcu.PERIODO_ID
-LEFT JOIN world.oltp_school_other_info osoinfo
-	ON osoinfo.SEDE_CODIGO = pcu.SEDE_CODIGO
-LEFT JOIN world.dim_school_day dsday
-	ON dsday.JORNADA_ID = osoinfo.JORNADA_ID
-LEFT JOIN world.dim_education_level delevel
-	ON delevel.NIVELENSE_ID = osoinfo.NIVELENSE_ID
-LIMIT 2;
-</sql>
-    <limit>2</limit>
+opcs.PC_USAGES_BY_SCCHOOL_AT_DEPARTMENT,
+dpcu.COD_KEY AS PC_USAGES_KEY,
+ddep.COD_KEY AS DEPARTMENT_KEY
+FROM world.oltp_pc_usages_sum opcs
+INNER JOIN world.dim_department ddep
+ON ddep.CODIGOINTERNODEPTO = opcs.CODIGOINTERNODEPTO
+INNER JOIN world.dim_pc_usages dpcu
+ON dpcu.ENSEQ_CODIGO = opcs.ENSEQ_CODIGO;</sql>
+    <limit />
     <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>

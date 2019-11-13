@@ -304,7 +304,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>16</xloc>
-      <yloc>144</yloc>
+      <yloc>160</yloc>
     </entry>
     <entry>
       <name>Create dimensions</name>
@@ -339,8 +339,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>128</xloc>
-      <yloc>144</yloc>
+      <xloc>112</xloc>
+      <yloc>160</yloc>
     </entry>
     <entry>
       <name>Create schools oltp</name>
@@ -376,7 +376,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>256</xloc>
-      <yloc>144</yloc>
+      <yloc>160</yloc>
     </entry>
     <entry>
       <name>Create enrollments oltp</name>
@@ -411,8 +411,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>544</xloc>
-      <yloc>144</yloc>
+      <xloc>592</xloc>
+      <yloc>160</yloc>
     </entry>
     <entry>
       <name>Create enrollments sum oltp</name>
@@ -447,7 +447,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>720</xloc>
+      <xloc>784</xloc>
       <yloc>32</yloc>
     </entry>
     <entry>
@@ -483,7 +483,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
+      <xloc>1040</xloc>
       <yloc>32</yloc>
     </entry>
     <entry>
@@ -519,8 +519,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>400</xloc>
-      <yloc>144</yloc>
+      <xloc>416</xloc>
+      <yloc>160</yloc>
     </entry>
     <entry>
       <name>Create oltp school other info</name>
@@ -555,8 +555,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>720</xloc>
-      <yloc>144</yloc>
+      <xloc>784</xloc>
+      <yloc>160</yloc>
     </entry>
     <entry>
       <name>Create pc usages oltp</name>
@@ -591,7 +591,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>720</xloc>
+      <xloc>784</xloc>
       <yloc>336</yloc>
     </entry>
     <entry>
@@ -627,7 +627,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>880</xloc>
+      <xloc>1024</xloc>
       <yloc>336</yloc>
     </entry>
     <entry>
@@ -663,7 +663,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1040</xloc>
+      <xloc>1248</xloc>
       <yloc>336</yloc>
     </entry>
   </entries>

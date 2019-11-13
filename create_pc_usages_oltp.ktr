@@ -520,7 +520,7 @@
     <add_filename_result>N</add_filename_result>
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
-    <encoding />
+    <encoding>UTF-8</encoding>
     <fields>
       <field>
         <name>SEDE_CODIGO</name>

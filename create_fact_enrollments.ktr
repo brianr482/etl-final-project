@@ -588,9 +588,34 @@
       <schema_name />
     </partitioning>
     <connection>db</connection>
-    <sql>SELECT 
+    <sql>WITH all_schools
+AS (SELECT 
+		sch.SEDE_CODIGO,
+		sch.CODIGOINTERNODEPTO,
+		sch.CODIGOINTERNOMUNI,
+ 		sch.AREA_ID,
+		sch.PERIODO_ID,
+		oers.ENROLLED_STUDENTS
+	FROM world.oltp_schools sch
+	INNER JOIN world.oltp_enrollments_sum oers
+		ON oers.SEDE_CODIGO = sch.SEDE_CODIGO
+	UNION
+	SELECT 
+		sch.SEDE_CODIGO,
+		sch.CODIGOINTERNODEPTO,
+		sch.CODIGOINTERNOMUNI,
+ 		sch.AREA_ID,
+		sch.PERIODO_ID,
+		NULL 
+	FROM world.oltp_schools sch
+	WHERE NOT sch.SEDE_CODIGO
+	IN (SELECT SEDE_CODIGO
+   	    FROM world.oltp_enrollments_sum)
+)
+
+SELECT
 	dsch.COD_KEY AS SCHOOL_KEY,
-	oers.ENROLLED_STUDENTS,
+	sch.ENROLLED_STUDENTS,
 	ddep.COD_KEY AS DEPARTMENT_KEY,
 	c.COD_KEY AS CITY_KEY,
 	dchar.COD_KEY AS CHARACTER_KEY,
@@ -598,31 +623,28 @@
 	dar.COD_KEY AS AREA_KEY,
 	dsday.COD_KEY AS SCHOOL_DAY_KEY,
 	delevel.COD_KEY AS EDUCATION_LEVEL_KEY
-FROM world.oltp_schools sch 
-LEFT JOIN world.oltp_enrollments_sum oers
-	ON oers.SEDE_CODIGO = sch.SEDE_CODIGO
-LEFT JOIN world.dim_department ddep
+FROM all_schools as sch
+INNER JOIN world.dim_department ddep
 	ON ddep.CODIGOINTERNODEPTO = sch.CODIGOINTERNODEPTO
-LEFT JOIN world.dim_city c
+INNER JOIN world.dim_city c
 	ON sch.CODIGOINTERNODEPTO = c.CODIGOINTERNODEPTO AND sch.CODIGOINTERNOMUNI = c.CODIGOINTERNOMUNI
-LEFT JOIN world.dim_area dar
+INNER JOIN world.dim_area dar
 	ON dar.AREA_ID = sch.AREA_ID
-LEFT JOIN world.dim_school dsch
+INNER JOIN world.dim_school dsch
 	ON dsch.SEDE_CODIGO = sch.SEDE_CODIGO
+INNER JOIN world.dim_period dpe
+	ON dpe.PERIODO_ID = sch.PERIODO_ID
 LEFT JOIN world.oltp_character ochar
 	ON ochar.SEDE_CODIGO = sch.SEDE_CODIGO
 LEFT JOIN world.dim_character dchar
 	ON dchar.CARACTER_CODIGO = ochar.CARACTER_CODIGO
-LEFT JOIN world.dim_period dpe
-	ON dpe.PERIODO_ID = sch.PERIODO_ID
 LEFT JOIN world.oltp_school_other_info osoinfo
 	ON osoinfo.SEDE_CODIGO = sch.SEDE_CODIGO
 LEFT JOIN world.dim_school_day dsday
 	ON dsday.JORNADA_ID = osoinfo.JORNADA_ID
 LEFT JOIN world.dim_education_level delevel
-	ON delevel.NIVELENSE_ID = osoinfo.NIVELENSE_ID
-LIMIT 2;</sql>
-    <limit>2</limit>
+	ON delevel.NIVELENSE_ID = osoinfo.NIVELENSE_ID</sql>
+    <limit>1</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>

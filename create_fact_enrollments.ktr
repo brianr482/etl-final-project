@@ -595,10 +595,17 @@ AS (SELECT
 		sch.CODIGOINTERNOMUNI,
  		sch.AREA_ID,
 		sch.PERIODO_ID,
-		oers.ENROLLED_STUDENTS
+		oers.ENROLLED_STUDENTS,
+		ochar.CARACTER_CODIGO,
+		osoinfo.JORNADA_ID,
+		osoinfo.NIVELENSE_ID
 	FROM world.oltp_schools sch
 	INNER JOIN world.oltp_enrollments_sum oers
 		ON oers.SEDE_CODIGO = sch.SEDE_CODIGO
+	INNER JOIN world.oltp_character ochar
+		ON ochar.SEDE_CODIGO = sch.SEDE_CODIGO
+	INNER JOIN world.oltp_school_other_info osoinfo
+		ON osoinfo.SEDE_CODIGO = sch.SEDE_CODIGO
 	UNION
 	SELECT 
 		sch.SEDE_CODIGO,
@@ -606,13 +613,15 @@ AS (SELECT
 		sch.CODIGOINTERNOMUNI,
  		sch.AREA_ID,
 		sch.PERIODO_ID,
-		NULL 
+		NULL,
+		NULL,
+		NULL,
+		NULL
 	FROM world.oltp_schools sch
 	WHERE NOT sch.SEDE_CODIGO
 	IN (SELECT SEDE_CODIGO
    	    FROM world.oltp_enrollments_sum)
 )
-
 SELECT
 	dsch.COD_KEY AS SCHOOL_KEY,
 	sch.ENROLLED_STUDENTS,
@@ -634,17 +643,13 @@ INNER JOIN world.dim_school dsch
 	ON dsch.SEDE_CODIGO = sch.SEDE_CODIGO
 INNER JOIN world.dim_period dpe
 	ON dpe.PERIODO_ID = sch.PERIODO_ID
-LEFT JOIN world.oltp_character ochar
-	ON ochar.SEDE_CODIGO = sch.SEDE_CODIGO
 LEFT JOIN world.dim_character dchar
-	ON dchar.CARACTER_CODIGO = ochar.CARACTER_CODIGO
-LEFT JOIN world.oltp_school_other_info osoinfo
-	ON osoinfo.SEDE_CODIGO = sch.SEDE_CODIGO
+	ON dchar.CARACTER_CODIGO = sch.CARACTER_CODIGO
 LEFT JOIN world.dim_school_day dsday
-	ON dsday.JORNADA_ID = osoinfo.JORNADA_ID
+	ON dsday.JORNADA_ID = sch.JORNADA_ID
 LEFT JOIN world.dim_education_level delevel
-	ON delevel.NIVELENSE_ID = osoinfo.NIVELENSE_ID</sql>
-    <limit>1</limit>
+	ON delevel.NIVELENSE_ID = sch.NIVELENSE_ID;</sql>
+    <limit />
     <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>

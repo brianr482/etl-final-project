@@ -2414,16 +2414,8 @@
     <update>Y</update>
     <fields>
       <key>
-        <name>SEDE_CODIGO</name>
-        <lookup>SEDE_CODIGO</lookup>
-      </key>
-      <key>
-        <name>ENSEQ_CODIGO</name>
-        <lookup>ENSEQ_CODIGO</lookup>
-      </key>
-      <key>
-        <name>ENSEQ_NOMBRE</name>
-        <lookup>ENSEQ_NOMBRE</lookup>
+        <name>ENSEQ_ID</name>
+        <lookup>ENSEQ_ID</lookup>
       </key>
       <date>
         <name />
@@ -2431,18 +2423,13 @@
         <to>date_to</to>
       </date>
       <field>
-        <name>PERIODO_ID</name>
-        <lookup>PERIODO_ID</lookup>
+        <name>ENSEQ_CODIGO</name>
+        <lookup>ENSEQ_CODIGO</lookup>
         <update>Insert</update>
       </field>
       <field>
-        <name>PERIODO_ANIO</name>
-        <lookup>PERIODO_ANIO</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>ENSEQ_ID</name>
-        <lookup>ENSEQ_ID</lookup>
+        <name>ENSEQ_NOMBRE</name>
+        <lookup>ENSEQ_NOMBRE</lookup>
         <update>Insert</update>
       </field>
       <return>

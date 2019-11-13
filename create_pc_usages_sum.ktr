@@ -566,10 +566,10 @@
     <connection>mysql</connection>
     <sql>SELECT A.ENSEQ_CODIGO, osch.CODIGOINTERNODEPTO, COUNT(A.ENSEQ_CODIGO) AS PC_USAGES_BY_SCCHOOL_AT_DEPARTMENT
 FROM world.oltp_pc_usages A
-LEFT JOIN world.oltp_schools osch
+INNER JOIN world.oltp_schools osch
 	ON A.SEDE_CODIGO = osch.SEDE_CODIGO
 GROUP BY A.ENSEQ_CODIGO, osch.CODIGOINTERNODEPTO;</sql>
-    <limit>0</limit>
+    <limit />
     <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>

@@ -531,40 +531,12 @@
         <stream_name>PC_USAGES_BY_SCCHOOL_AT_DEPARTMENT</stream_name>
       </field>
       <field>
-        <column_name>DEPARTMENT_KEY</column_name>
-        <stream_name>DEPARTMENT_KEY</stream_name>
-      </field>
-      <field>
-        <column_name>SCHOOL_KEY</column_name>
-        <stream_name>SCHOOL_KEY</stream_name>
-      </field>
-      <field>
         <column_name>PC_USAGES_KEY</column_name>
         <stream_name>PC_USAGES_KEY</stream_name>
       </field>
       <field>
-        <column_name>CITY_KEY</column_name>
-        <stream_name>CITY_KEY</stream_name>
-      </field>
-      <field>
-        <column_name>CHARACTER_KEY</column_name>
-        <stream_name>CHARACTER_KEY</stream_name>
-      </field>
-      <field>
-        <column_name>PERIOD_KEY</column_name>
-        <stream_name>PERIOD_KEY</stream_name>
-      </field>
-      <field>
-        <column_name>AREA_KEY</column_name>
-        <stream_name>AREA_KEY</stream_name>
-      </field>
-      <field>
-        <column_name>SCHOOL_DAY_KEY</column_name>
-        <stream_name>SCHOOL_DAY_KEY</stream_name>
-      </field>
-      <field>
-        <column_name>EDUCATION_LEVEL_KEY</column_name>
-        <stream_name>EDUCATION_LEVEL_KEY</stream_name>
+        <column_name>DEPARTMENT_KEY</column_name>
+        <stream_name>DEPARTMENT_KEY</stream_name>
       </field>
     </fields>
     <cluster_schema />

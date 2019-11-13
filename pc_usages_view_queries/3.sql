@@ -1,0 +1,1 @@
+SELECT * FROM world.pc_usages_view;

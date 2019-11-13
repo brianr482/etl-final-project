@@ -566,17 +566,17 @@
     <connection>mysql</connection>
     <sql>SELECT
 	opcuc.PC_USAGES_BY_SCCHOOL_AT_DEPARTMENT,
-	ddep.COD_KEY AS DEPARTMENT_KEY,
-	dpcu.COD_KEY AS PC_USAGES_KEY
+	dpcu.COD_KEY AS PC_USAGES_KEY,
+	ddep.COD_KEY AS DEPARTMENT_KEY
 FROM world.oltp_pc_usages pcu
 INNER JOIN world.oltp_pc_usages_sum opcuc
 	ON opcuc.ENSEQ_CODIGO = pcu.ENSEQ_CODIGO
 INNER JOIN world.dim_department ddep
 	ON ddep.CODIGOINTERNODEPTO = opcuc.CODIGOINTERNODEPTO
 INNER JOIN world.dim_pc_usages dpcu
-	ON dpcu.ENSEQ_CODIGO = pcu.ENSEQ_CODIGO;
-</sql>
-    <limit />
+	ON dpcu.ENSEQ_CODIGO = pcu.ENSEQ_CODIGO
+LIMIT 2;</sql>
+    <limit>2</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
